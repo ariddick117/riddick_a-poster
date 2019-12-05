@@ -15,7 +15,7 @@
 }
 
 body {
-  background-image: linear-gradient(grey, lightgrey, lightgrey, grey); 
+  background-image: linear-gradient(grey,lightgrey, lightgrey, lightgrey, grey); 
   color: black; 
   font-size: 14px; 
   text-align: center;
@@ -28,7 +28,7 @@ body {
 
 main { 
   margin: 0 auto; 
-  padding: 40px; 
+  /* padding: 40px;  */
 }
 
 section > div:not(.text-wrapper) {
@@ -47,13 +47,14 @@ section > div:not(.text-wrapper) {
   width: 65%;
 }
 
+
 /* Header Section Styling */
 .header {
   display: block;
 }
 
 .svg-header {
-  width: 15%;
+  width: 50%;
 }
 
 .main-header {
@@ -63,26 +64,37 @@ section > div:not(.text-wrapper) {
   font-family: "overwatch-italic", sans-serif;
 }
 
+
 /* Legend Styling */
 .legend {
-  display: inline;
-  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.legend h3 {
+  padding: 10px;
 }
 
 #l-title {
   font-family: 'overwatch';
   color: black;
+  font-size: 35px;
 }
 
 #l-weak {
   font-family: 'overwatch-italic';
   color: red;
+  font-size: 25px;
+  margin-top: 35px;
 }
 
 #l-strong {
   font-family: 'overwatch-italic';
   color: blue;
+  font-size: 25px;
+  margin-top: 35px;
 }
+
 
 /* SVG Styling */
 .hero-icon {
@@ -109,7 +121,7 @@ section > div:not(.text-wrapper) {
 }
 
 .svg-graphic {
-  width: 200px;
+  width: 150px;
   border-radius: 30px;
 }
 
@@ -128,12 +140,16 @@ section > div:not(.text-wrapper) {
   margin-top: 8px
 }
 
-#strength {
-  background-color: red;
+.see-more:hover {
+  cursor: pointer;
 }
 
-#weak {
+.strength {
   background-color: blue;
+}
+
+.weak {
+  background-color: red;
 }
 
 .beer-info { 
@@ -148,19 +164,124 @@ p > span {
   padding-bottom: 12px; 
 }
 
+
 /* Popover Styles */
-.popover { 
+.popover-s {
   display: none;
   position: absolute;
-  top: 18%;
-  left: 110%;
-  background-color: orange;
-  width: 350px;
+  top: 110%;
+  left: 50%;
+  background-color: blue;
+  width: 150px;
   z-index: 1;
   border-radius: 8px;
   padding: 4px;
 }
 
-.show-popover { 
+.show-popover-s { 
   display: block; 
+}
+
+.popover-w {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 50%;
+  background-color: red;
+  width: 150px;
+  z-index: 1;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.show-popover-w { 
+  display: block; 
+}
+
+/* media query for 685px (tablet) */
+@media screen and (min-width: 42.8125em) {
+  .svg-header {
+    width: 30%;
+  }
+
+  .svg-graphic {
+    width: 200px;
+    border-radius: 20px;
+  }
+
+  .popover-s {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    background-color: blue;
+    width: 350px;
+    z-index: 1;
+    border-radius: 8px;
+    padding: 4px;
+  }
+
+  .popover-w {
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: 50%;
+    background-color: red;
+    width: 350px;
+    z-index: 1;
+    border-radius: 8px;
+    padding: 4px;
+  }
+
+  .show-popover-s { 
+    display: block; 
+  }
+
+  .show-popover-w { 
+    display: block; 
+  }
+}
+
+/* media query for 1024px (desktop)*/
+@media screen and (min-width: 64em) {
+  .svg-header {
+    width: 15%;
+  }
+
+  .svg-graphic {
+    width: 200px;
+    border-radius: 30px;
+  }
+
+  .popover-s {
+    display: none;
+    position: absolute;
+    top: 18%;
+    left: 60%;
+    background-color: blue;
+    width: 350px;
+    z-index: 1;
+    border-radius: 8px;
+    padding: 4px;
+  }
+
+  .popover-w {
+    display: none;
+    position: absolute;
+    top: 18%;
+    right: 60%;
+    background-color: red;
+    width: 350px;
+    z-index: 1;
+    border-radius: 8px;
+    padding: 4px;
+  }
+
+  .show-popover-s { 
+    display: block; 
+  }
+
+  .show-popover-w { 
+    display: block; 
+  }
 }
