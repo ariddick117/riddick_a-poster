@@ -6,72 +6,452 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
-    <title>SVG Animation with Waypoint and Greensock</title>
+    <title>Overwatch | Hero Compatibility Chart</title>
 </head>
 <body>
-    <h1 class="main-header">SVG with Greensock and Waypoint.js</h1>
+    <section class="header">
+      <object data="images/1-main_logo.svg" type="image/svg+xml" class="svg-header" id="bottle"></object>
+      <h1 class="main-header">Hero Compatibility Chart</h1>
+
+      <div class="legend">
+        <h3 id="l-weak">Weakness</h3>
+        <h3 id="l-title">HERO</h3>
+        <h3 id="l-strong">Strength</h3>
+      </div>
+    </section>
+
     <main>
-        <!-- if we were using a framework, these might be 6-col or something-->
-        <section id="beer1">
-          <div class="label_wrapper">
-            <h1 class="hidden">Plain old beer</h1>
-            <object data="images/bottleGraphic.svg" type="image/svg+xml" class="svg-graphic" id="bottle"></object>
-            <span class="see-more" data-target="1">See More Info</span>
-          </div>
-
-          <div class="text-wrapper">
-            <h3>Beer In Glasses</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem facere deleniti ipsam, aliquid ipsum, cum rem ut eos voluptate omnis consequuntur delectus ratione amet nobis laborum accusantium possimus odit quibusdam?
-            </p>
-            <p>
-              Possimus consequuntur amet illum ipsa laborum accusantium, dolor neque magnam ipsum, adipisci deserunt distinctio necessitatibus asperiores ad nulla? Repellendus nobis, eveniet perspiciatis. Quisquam molestiae beatae laborum quo impedit nobis quod.
-            </p>
-          </div>
-        </section>
-
-        <section id="beer2">
-          <div class="label_wrapper">
-            <h1 class="hidden">Plain old beer</h1>
-            <object data="images/beerBarrels.svg" type="image/svg+xml" class="svg-graphic" id="barrels"></object>
-            <span class="see-more" data-target="2">See More Info</span>
-          </div>
-
-          <div class="text-wrapper">
-            <h3>Beer In Barrels</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem facere deleniti ipsam, aliquid ipsum, cum rem ut eos voluptate omnis consequuntur delectus ratione amet nobis laborum accusantium possimus odit quibusdam?
-            </p>
-            <p>
-              Possimus consequuntur amet illum ipsa laborum accusantium, dolor neque magnam ipsum, adipisci deserunt distinctio necessitatibus asperiores ad nulla? Repellendus nobis, eveniet perspiciatis. Quisquam molestiae beatae laborum quo impedit nobis quod.
-            </p>
-          </div>
-        </section>
-
-        <section id="beer3">
-          <div class="label_wrapper">
-            <h1 class="hidden">Plain old beer</h1>
-            <object data="images/qualityBeer.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
-            <span class="see-more" data-target="3">See More Info</span>
-          </div>
-
-          <div class="text-wrapper">
-            <h3>Beer in Fancy Glasses</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem facere deleniti ipsam, aliquid ipsum, cum rem ut eos voluptate omnis consequuntur delectus ratione amet nobis laborum accusantium possimus odit quibusdam?
-            </p>
-          </div>
-        </section>
-
-        <article class="popover">
+      <!-- Popover -->
+      <article class="popover">
           <h4 class="ipa-rating"></h4>
           <div class="ratings"></div>
             <p class="beer-description"></p>
-        </article>
+      </article>
+
+      <section class="hero-icon" id="beer1">
+          <div class="label_wrapper">
+            <h1 class="hidden">Ana</h1>
+            <object data="images/ana.svg" type="image/svg+xml" class="svg-graphic" id="bottle"></object>
+          </div>
+
+          <h3>Ana</h3>
+
+          <div class="buttons">
+            <span class="see-more" data-target="1" id="strength">Strengths</span>
+            <span class="see-more" data-target="1" id="weak">Weaknesses</span>
+          </div>
+        </section>
+
+        <section class="hero-icon" id="beer2">
+          <div class="label_wrapper">
+            <h1 class="hidden">Ashe</h1>
+            <object data="images/ashe.svg" type="image/svg+xml" class="svg-graphic" id="barrels"></object>
+          </div>
+
+          <h3>Ashe</h3>
+
+          <div class="buttons">
+            <span class="see-more" data-target="2" id="strength">Strengths</span>
+            <span class="see-more" data-target="2" id="weak">Weaknesses</span>
+          </div>
+        </section>
+
+        <section class="hero-icon" id="beer3">
+          <div class="label_wrapper">
+            <h1 class="hidden">Baptiste</h1>
+            <object data="images/baptiste.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+          </div>
+
+          <h3>Baptiste</h3>
+
+          <div class="buttons">
+            <span class="see-more" data-target="3" id="strength">Strengths</span>
+            <span class="see-more" data-target="3" id="weak">Weaknesses</span>
+          </div>
+        </section>
+
+        <section class="hero-icon" id="beer4">
+            <div class="label_wrapper">
+              <h1 class="hidden">Bastion</h1>
+              <object data="images/bastion.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+            </div>
+  
+            <h3>Bastion</h3>
+  
+            <div class="buttons">
+              <span class="see-more" data-target="4" id="strength">Strengths</span>
+              <span class="see-more" data-target="4" id="weak">Weaknesses</span>
+            </div>
+        </section>
+
+          <section class="hero-icon" id="beer5">
+              <div class="label_wrapper">
+                <h1 class="hidden">Brigitte</h1>
+                <object data="images/brigitte.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+    
+              <h3>Brigitte</h3>
+    
+              <div class="buttons">
+                <span class="see-more" data-target="5" id="strength">Strengths</span>
+                <span class="see-more" data-target="5" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer6">
+              <div class="label_wrapper">
+                <h1 class="hidden">Doomfist</h1>
+                <object data="images/doomfist.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Doomfist</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="6" id="strength">Strengths</span>
+                <span class="see-more" data-target="6" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer7">
+              <div class="label_wrapper">
+                <h1 class="hidden">D.Va</h1>
+                <object data="images/dva.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>D.Va</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="7" id="strength">Strengths</span>
+                <span class="see-more" data-target="7" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer8">
+              <div class="label_wrapper">
+                <h1 class="hidden">Genji</h1>
+                <object data="images/genji.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Genji</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="8" id="strength">Strengths</span>
+                <span class="see-more" data-target="8" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer9">
+              <div class="label_wrapper">
+                <h1 class="hidden">Hanzo</h1>
+                <object data="images/hanzo.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Hanzo</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="9" id="strength">Strengths</span>
+                <span class="see-more" data-target="9" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer10">
+              <div class="label_wrapper">
+                <h1 class="hidden">Junkrat</h1>
+                <object data="images/junkrat.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Junkrat</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="10" id="strength">Strengths</span>
+                <span class="see-more" data-target="10" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer11">
+              <div class="label_wrapper">
+                <h1 class="hidden">Lucio</h1>
+                <object data="images/lucio.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Lucio</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="11" id="strength">Strengths</span>
+                <span class="see-more" data-target="11" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer12">
+              <div class="label_wrapper">
+                <h1 class="hidden">McCree</h1>
+                <object data="images/mccree.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>McCree</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="12" id="strength">Strengths</span>
+                <span class="see-more" data-target="12" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer13">
+              <div class="label_wrapper">
+                <h1 class="hidden">Mei</h1>
+                <object data="images/mei.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Mei</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="13" id="strength">Strengths</span>
+                <span class="see-more" data-target="13" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer14">
+              <div class="label_wrapper">
+                <h1 class="hidden">Mercy</h1>
+                <object data="images/mercy.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Mercy</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="14" id="strength">Strengths</span>
+                <span class="see-more" data-target="14" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer15">
+              <div class="label_wrapper">
+                <h1 class="hidden">Moira</h1>
+                <object data="images/moira.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Moira</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="15" id="strength">Strengths</span>
+                <span class="see-more" data-target="15" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer16">
+              <div class="label_wrapper">
+                <h1 class="hidden">Orisa</h1>
+                <object data="images/orisa.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Orisa</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="16" id="strength">Strengths</span>
+                <span class="see-more" data-target="16" id="weak">Weaknesses</span>
+              </div>
+          </section>
+        
+          <section class="hero-icon" id="beer17">
+              <div class="label_wrapper">
+                <h1 class="hidden">Pharah</h1>
+                <object data="images/pharah.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Pharah</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="17" id="strength">Strengths</span>
+                <span class="see-more" data-target="17" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer18">
+              <div class="label_wrapper">
+                <h1 class="hidden">Reaper</h1>
+                <object data="images/reaper.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Reaper</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="18" id="strength">Strengths</span>
+                <span class="see-more" data-target="18" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer19">
+              <div class="label_wrapper">
+                <h1 class="hidden">Reinhardt</h1>
+                <object data="images/reinhardt.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Reinhardt</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="19" id="strength">Strengths</span>
+                <span class="see-more" data-target="19" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer20">
+              <div class="label_wrapper">
+                <h1 class="hidden">Roadhog</h1>
+                <object data="images/roadhog.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Roadhog</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="20" id="strength">Strengths</span>
+                <span class="see-more" data-target="20" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer21">
+              <div class="label_wrapper">
+                <h1 class="hidden">Soldier: 76</h1>
+                <object data="images/soldier_76.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Soldier: 76</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="21" id="strength">Strengths</span>
+                <span class="see-more" data-target="21" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer22">
+              <div class="label_wrapper">
+                <h1 class="hidden">Sombra</h1>
+                <object data="images/sombra.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Sombra</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="22" id="strength">Strengths</span>
+                <span class="see-more" data-target="22" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer23">
+              <div class="label_wrapper">
+                <h1 class="hidden">Symmetra</h1>
+                <object data="images/symmetra.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Symmetra</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="23" id="strength">Strengths</span>
+                <span class="see-more" data-target="23" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer24">
+              <div class="label_wrapper">
+                <h1 class="hidden">Torbjorn</h1>
+                <object data="images/torbjorn.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Torbjorn</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="24" id="strength">Strengths</span>
+                <span class="see-more" data-target="24" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer25">
+              <div class="label_wrapper">
+                <h1 class="hidden">Tracer</h1>
+                <object data="images/tracer.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Tracer</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="25" id="strength">Strengths</span>
+                <span class="see-more" data-target="25" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer26">
+              <div class="label_wrapper">
+                <h1 class="hidden">Widowmaker</h1>
+                <object data="images/widowmaker.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Widowmaker</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="26" id="strength">Strengths</span>
+                <span class="see-more" data-target="26" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer27">
+              <div class="label_wrapper">
+                <h1 class="hidden">Winston</h1>
+                <object data="images/winston.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Winston</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="27" id="strength">Strengths</span>
+                <span class="see-more" data-target="27" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer28">
+              <div class="label_wrapper">
+                <h1 class="hidden">Wrecking Ball</h1>
+                <object data="images/wrecking_ball.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Wrecking Ball</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="28" id="strength">Strengths</span>
+                <span class="see-more" data-target="28" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer29">
+              <div class="label_wrapper">
+                <h1 class="hidden">Zarya</h1>
+                <object data="images/zarya.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Zarya</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="29" id="strength">Strengths</span>
+                <span class="see-more" data-target="29" id="weak">Weaknesses</span>
+              </div>
+          </section>
+
+          <section class="hero-icon" id="beer30">
+              <div class="label_wrapper">
+                <h1 class="hidden">Zenyatta</h1>
+                <object data="images/zenyatta.svg" type="image/svg+xml" class="svg-graphic" id="glasses"></object>
+              </div>
+      
+              <h3>Zenyatta</h3>
+      
+              <div class="buttons">
+                <span class="see-more" data-target="30" id="strength">Strengths</span>
+                <span class="see-more" data-target="30" id="weak">Weaknesses</span>
+              </div>
+          </section>
     </main>
     <script src="js/main.js"></script>
 </body>

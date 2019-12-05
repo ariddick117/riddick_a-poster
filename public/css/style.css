@@ -1,21 +1,40 @@
 * { box-sizing: border-box; }
 
 @font-face {
-  font-family: 'brewery';
-  src: url('AmericanBreweryRough.ttf') format('truetype');
+  font-family: 'overwatch';
+  src: url('koverwatch.ttf') format('truetype');
 }
-body { background-color: white; color: black; font-size: 14px; }
 
-.buffer { min-height: 100vh }
+@font-face {
+  font-family: 'overwatch-italic';
+  src: url('bignoodletoo.ttf') format('truetype');
+}
 
-main { padding: 40px; }
+.hidden { 
+  display: none; 
+}
 
-section { margin-bottom: 100px; color: white; }
+body {
+  background-image: linear-gradient(grey, lightgrey, lightgrey, grey); 
+  color: black; 
+  font-size: 14px; 
+  text-align: center;
+  justify-content: center;
+}
+
+.buffer { 
+  min-height: 100vh; 
+}
+
+main { 
+  margin: 0 auto; 
+  padding: 40px; 
+}
 
 section > div:not(.text-wrapper) {
-  width: 30%; display:
-  inline-block;
-  background-color: black;
+  /* width: 30%;  */
+  display: inline-block;
+  /* background-color: black; */
   text-align: center;
   padding: 20px;
   position: relative;
@@ -28,30 +47,108 @@ section > div:not(.text-wrapper) {
   width: 65%;
 }
 
-section h3 {
-  display: inline-block;
-  color: black;
-  font-family: 'brewery', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 0
+/* Header Section Styling */
+.header {
+  display: block;
 }
-section p { color: black; width: 70%; font-size: 1.25rem; }
 
-.hidden { display: none; }
-
-.svg-graphic { width: 280px; }
+.svg-header {
+  width: 15%;
+}
 
 .main-header {
-  margin: 20px 0 0 40px; 
-  font-size: 2rem;
-  font-family: "brewery", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 40px;
+  font-family: "overwatch-italic", sans-serif;
 }
 
-.beer-info { display: inline-block; vertical-align: top; padding: 30px; border: thin solid white; }
+/* Legend Styling */
+.legend {
+  display: inline;
+  font-size: 25px;
+}
 
-p > span { display: block; padding-bottom: 12px; }
+#l-title {
+  font-family: 'overwatch';
+  color: black;
+}
 
+#l-weak {
+  font-family: 'overwatch-italic';
+  color: red;
+}
 
+#l-strong {
+  font-family: 'overwatch-italic';
+  color: blue;
+}
+
+/* SVG Styling */
+.hero-icon {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px; 
+  color: white;
+}
+
+.hero-icon h3 {
+  display: inline-block;
+  text-align: center;
+  color: black;
+  font-family: 'overwatch', sans-serif;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 0
+}
+
+.hero-icon p { 
+  color: black; 
+  width: 70%; 
+  font-size: 1.25rem; 
+}
+
+.svg-graphic {
+  width: 200px;
+  border-radius: 30px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.see-more { 
+  /* display: block;  */
+  font-family: 'overwatch';
+  font-size: 20px;
+  width: 75px;
+  padding: 12px 18px; 
+  border-radius: 8px; 
+  color: white;  
+  margin-top: 8px
+}
+
+#strength {
+  background-color: red;
+}
+
+#weak {
+  background-color: blue;
+}
+
+.beer-info { 
+  display: inline-block; 
+  vertical-align: top; 
+  padding: 30px; 
+  border: thin solid white; 
+}
+
+p > span { 
+  display: block; 
+  padding-bottom: 12px; 
+}
+
+/* Popover Styles */
 .popover { 
   display: none;
   position: absolute;
@@ -64,13 +161,6 @@ p > span { display: block; padding-bottom: 12px; }
   padding: 4px;
 }
 
-.show-popover { display: block; }
-
-.see-more { 
+.show-popover { 
   display: block; 
-  padding: 12px 18px; 
-  border-radius: 8px; 
-  color: white; 
-  background-color: salmon; 
-  margin-top: 8px
 }
