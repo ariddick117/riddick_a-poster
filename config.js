@@ -3,7 +3,7 @@ const config = {
     user: 'root',
     password: '', //root for mac
     port: 3306, //8889 for mac
-    database: 'beerstats'
+    database: 'overwatch_heroes'
 }
 
 module.exports = config;
