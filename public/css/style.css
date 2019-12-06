@@ -15,7 +15,7 @@
 }
 
 body {
-  background-image: linear-gradient(grey,lightgrey, lightgrey, lightgrey, grey); 
+  background-image: linear-gradient(grey,lightgrey, lightgrey, lightgrey, lightgrey, lightgrey, grey); 
   color: black; 
   font-size: 14px; 
   text-align: center;
@@ -172,14 +172,15 @@ p > span {
   top: 110%;
   left: 50%;
   background-color: blue;
-  width: 150px;
+  width: 185px;
   z-index: 1;
   border-radius: 8px;
   padding: 4px;
 }
 
 .show-popover-s { 
-  display: block; 
+  display: flex; 
+  flex-wrap: wrap; 
 }
 
 .popover-w {
@@ -188,20 +189,60 @@ p > span {
   top: 110%;
   right: 50%;
   background-color: red;
-  width: 150px;
+  width: 185px;
   z-index: 1;
   border-radius: 8px;
   padding: 4px;
 }
 
 .show-popover-w { 
-  display: block; 
+  display: flex; 
+  flex-wrap: wrap; 
+}
+
+/* Database Styling */
+.popover-s img {
+  width: 40px;
+}
+
+.popover-w img {
+  width: 40px;
+}
+
+.popover-s h4 {
+  font-size: 15px;
+  margin: 5px;
+}
+
+.popover-w h4 {
+  font-size: 15px;
+  margin: 5px;
 }
 
 /* media query for 685px (tablet) */
 @media screen and (min-width: 42.8125em) {
   .svg-header {
     width: 30%;
+  }
+
+  #l-title {
+    font-family: 'overwatch';
+    color: black;
+    font-size: 40px;
+  }
+
+  #l-weak {
+    font-family: 'overwatch-italic';
+    color: red;
+    font-size: 30px;
+    margin-top: 40px;
+  }
+
+  #l-strong {
+    font-family: 'overwatch-italic';
+    color: blue;
+    font-size: 30px;
+    margin-top: 40px;
   }
 
   .svg-graphic {
@@ -221,6 +262,10 @@ p > span {
     padding: 4px;
   }
 
+  .popover-s img {
+    width: 80px;
+  }
+
   .popover-w {
     display: none;
     position: absolute;
@@ -233,19 +278,55 @@ p > span {
     padding: 4px;
   }
 
+  .popover-w img {
+    width: 80px;
+  }
+
   .show-popover-s { 
-    display: block; 
+    display: flex; 
+    flex-wrap: wrap; 
   }
 
   .show-popover-w { 
-    display: block; 
+    display: flex; 
+    flex-wrap: wrap; 
+  }
+
+  .popover-s h4 {
+    font-size: 25px;
+    margin: 15px;
+  }
+  
+  .popover-w h4 {
+    font-size: 25px;
+    margin: 15px;
   }
 }
 
 /* media query for 1024px (desktop)*/
 @media screen and (min-width: 64em) {
   .svg-header {
-    width: 15%;
+    width: 20%;
+  }
+
+  #l-title {
+    font-family: 'overwatch';
+    color: black;
+    font-size: 45px;
+  }
+
+  #l-weak {
+    font-family: 'overwatch-italic';
+    color: red;
+    font-size: 35px;
+    margin-top: 45px;
+  }
+
+  #l-strong {
+    font-family: 'overwatch-italic';
+    color: blue;
+    font-size: 35px;
+    margin-top: 45px;
   }
 
   .svg-graphic {
@@ -259,10 +340,14 @@ p > span {
     top: 18%;
     left: 60%;
     background-color: blue;
-    width: 350px;
+    width: 355px;
     z-index: 1;
     border-radius: 8px;
     padding: 4px;
+  }
+
+  .popover-s img {
+    width: 80px;
   }
 
   .popover-w {
@@ -271,17 +356,33 @@ p > span {
     top: 18%;
     right: 60%;
     background-color: red;
-    width: 350px;
+    width: 355px;
     z-index: 1;
     border-radius: 8px;
     padding: 4px;
   }
 
+  .popover-w img {
+    width: 80px;
+  }
+
   .show-popover-s { 
-    display: block; 
+    display: flex; 
+    flex-wrap: wrap;
   }
 
   .show-popover-w { 
-    display: block; 
+    display: flex; 
+    flex-wrap: wrap;
+  }
+
+  .popover-s h4 {
+    font-size: 20px;
+    margin: 10px;
+  }
+  
+  .popover-w h4 {
+    font-size: 20px;
+    margin: 10px;
   }
 }
